@@ -19,6 +19,7 @@ import java_swing_study.chap09.layout.example.Example_04;
 import java_swing_study.chap09.layout.example.Example_05;
 import java_swing_study.chap09.layout.example.Example_07;
 import java_swing_study.chap09.layout.example.Example_08;
+import java_swing_study.chap09.layout.openchallenge.OpenChallenge;
 
 @SuppressWarnings("serial")
 public class LayoutMain extends JFrame implements ActionListener {
@@ -76,18 +77,23 @@ public class LayoutMain extends JFrame implements ActionListener {
 		pLeft.setLayout(new GridLayout(0, 2, 10, 10));
 		
 		btnFlow = new JButton("FlowLayout");
+		btnFlow.addActionListener(this);
 		pLeft.add(btnFlow);
 		
 		btnBorder = new JButton("BorderLayout");
+		btnBorder.addActionListener(this);
 		pLeft.add(btnBorder);
 		
 		btnGrid = new JButton("GridLayout");
+		btnGrid.addActionListener(this);
 		pLeft.add(btnGrid);
 		
 		btnAbsolute = new JButton("AbsoluteLayout");
+		btnAbsolute.addActionListener(this);
 		pLeft.add(btnAbsolute);
 		
 		btnOpen = new JButton("OpenChallenge");
+		btnOpen.addActionListener(this);
 		pLeft.add(btnOpen);
 		
 		pRight = new JPanel();
@@ -125,6 +131,21 @@ public class LayoutMain extends JFrame implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnOpen) {
+			btnOpenActionPerformed(e);
+		}
+		if (e.getSource() == btnAbsolute) {
+			btnAbsoluteActionPerformed(e);
+		}
+		if (e.getSource() == btnGrid) {
+			btnGridActionPerformed(e);
+		}
+		if (e.getSource() == btnBorder) {
+			btnBorderActionPerformed(e);
+		}
+		if (e.getSource() == btnFlow) {
+			btnFlowActionPerformed(e);
+		}
 		if (e.getSource() == btn08) {
 			btn08ActionPerformed(e);
 		}
@@ -162,6 +183,26 @@ public class LayoutMain extends JFrame implements ActionListener {
 	}
 	protected void btn08ActionPerformed(ActionEvent e) {
 		Example_08 frame = new Example_08();
+		frame.setVisible(true);
+	}
+	protected void btnFlowActionPerformed(ActionEvent e) {
+		FlowLayoutEx frame = new FlowLayoutEx();
+		frame.setVisible(true);
+	}
+	protected void btnBorderActionPerformed(ActionEvent e) {
+		BorderLayoutEx frame = new BorderLayoutEx();
+		frame.setVisible(true);
+	}
+	protected void btnGridActionPerformed(ActionEvent e) {
+		GridLayoutEx frame = new GridLayoutEx();
+		frame.setVisible(true);
+	}
+	protected void btnAbsoluteActionPerformed(ActionEvent e) {
+		AbsoluteLayoutEx frame = new AbsoluteLayoutEx();
+		frame.setVisible(true);
+	}
+	protected void btnOpenActionPerformed(ActionEvent e) {
+		OpenChallenge frame = new OpenChallenge();
 		frame.setVisible(true);
 	}
 }
