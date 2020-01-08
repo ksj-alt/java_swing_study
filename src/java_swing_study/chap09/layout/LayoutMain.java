@@ -43,6 +43,8 @@ public class LayoutMain extends JFrame implements ActionListener {
 	private void initialize() {
 		setTitle("배치레이아웃 예제");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		setSize(450, 116);
+//		setLocation(100, 100);
 		setBounds(100, 100, 450, 116);
 		contentPane = new JPanel();
 		contentPane.setBorder(new TitledBorder(null, "레이아웃 예제", TitledBorder.LEADING, TitledBorder.TOP, null, null));
